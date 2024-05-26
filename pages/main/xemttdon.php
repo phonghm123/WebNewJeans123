@@ -78,12 +78,22 @@ if (mysqli_num_rows($result_lietke_dh) == 0) {
             }
           ?>
         </td>
-<td>        <?php if ($row['tinhtrangtt'] == 0) {
-                echo '<a href="index.php?quanly=xemthanhtoan" style="text-decoration: none; text-color: black">Chưa thanh toán</a>  ';
-            } else if ($row['tinhtrangtt'] == 1) {
-                echo '<a>Đã thanh toán</a>';
-            }
-          ?></td>
+        <td>
+    <?php
+    if ($row['cart_payment'] == 'Paypal') {
+        echo '<a>Đã trả</a>';
+    } else {
+     
+        if ($row['tinhtrangtt'] == 0) {
+          
+            echo '<a href="modules/quanlydonhang/trangthaitt.php?code='.$row['code_cart'].'">Chưa trả</a>';
+        } else if ($row['tinhtrangtt'] == 1) {
+       
+            echo '<a>Đã trả</a>';
+        }
+    }
+    ?>
+</td>
         <td>
             <a class="btn btn-primary" href="index.php?quanly=xemthongtin&code=<?php echo $row['code_cart']?>">Xem đơn hàng</a>
         </td>
