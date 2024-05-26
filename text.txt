@@ -1,0 +1,4 @@
+Quản lý admincp 
+tai khoan :admin
+matkhau :1 
+

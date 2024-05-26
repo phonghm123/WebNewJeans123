@@ -1,0 +1,36 @@
+.dang-nhap{
+    background-color: antiquewhite;
+    border-radius: 10px;
+    border: 2px solid black;
+    width: 30%;
+    margin: 0 auto;
+    margin-top: 200px;
+    margin-bottom: 200px;
+}
+.dang-nhap h1{
+    text-align: center;
+}
+.dn input{
+    width: 90%;
+    height: 30px;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+.dn{
+    text-align: center;
+}
+input.nutdn{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 30%;
+    height: 30px;
+    font-size: 17px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: white;
+}
+.nutdn:hover{
+    color: azure;
+    background-color: black;
+    border: 2px solid chocolate;
+}
