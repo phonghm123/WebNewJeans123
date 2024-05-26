@@ -128,14 +128,23 @@ $result_lietke_dh = mysqli_query($connect, $sql_lietke_dh);
                 ?>
             </td>
             <td>
-                <?php
-                if ($row['tinhtrangtt'] == 0) {
-                    echo '<a class="btn btn-warning" href="modules/quanlydonhang/trangthaitt.php?code='.$row['code_cart'].'">Chưa trả</a>';
-                } else if ($row['tinhtrangtt'] == 1) {
-                    echo '<button class="btn btn-success">Đã trả</button>';
-                }
-                ?>
-            </td>
+    <?php
+    if ($row['cart_payment'] == 'Paypal') {
+        echo '<button class="btn btn-success">Đã trả</button>';
+    } else {
+     
+        if ($row['tinhtrangtt'] == 0) {
+          
+            echo '<a class="btn btn-warning" href="modules/quanlydonhang/trangthaitt.php?code='.$row['code_cart'].'">Chưa trả</a>';
+        } else if ($row['tinhtrangtt'] == 1) {
+       
+            echo '<button class="btn btn-success">Đã trả</button>';
+        }
+    }
+    ?>
+</td>
+
+
             <td>
                 <a class="btn btn-primary" href="index.php?action=quanlydonhang&query=xemdonhang&code=<?php echo $row['code_cart']; ?>">Xem đơn hàng</a>|
             </td>
